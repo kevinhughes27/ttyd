@@ -296,6 +296,13 @@ export class Xterm extends Component<Props> {
                     this.titleFixed = value;
                     document.title = value;
                     break;
+                case 'fontFamily':
+                    const fontSize = options['fontSize'] || '13'
+                    document.fonts.load(`${fontSize}px "${value}"`).then(() => {
+                        console.log(`[ttyd] ${value} loaded`);
+                        fitAddon.fit();
+                    })
+                    break;
                 default:
                     console.log(`[ttyd] option: ${key}=${JSON.stringify(value)}`);
                     terminal.options[key] = value;
