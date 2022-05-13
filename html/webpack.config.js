@@ -38,8 +38,8 @@ const baseConfig = {
                 ],
             },
             {
-                test: /\.(woff|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                use: 'base64-inline-loader',
+                test: /\.(woff|ttf)/,
+                type: 'asset/inline',
             },
         ]
     },

@@ -282,6 +282,7 @@ export class Xterm extends Component<Props> {
                     const fontSize = options['fontSize'] || '13'
                     document.fonts.load(`${fontSize}px "${value}"`).then(() => {
                         console.log(`[ttyd] ${value} loaded`);
+                        terminal.options['fontFamily'] = value;
                         fitAddon.fit();
                     })
                     break;
